@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Norway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+    <link rel="stylesheet" type="text/css" href="/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="/styles/container.css">
+    <link rel="stylesheet" type="text/css" href="/styles/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="home blog wp-embed-responsive theme-norway8 woocommerce-js theme-body sidebar_position-right style_set- blog_layout-masonry header_layout-two top_featured_layout-three colored_categories">
+    <div class="wrap">
+        <!-- Header -->
+        <%- include ('./Header.ejs') %>
+        <!--search-wrap-->
+        <div id="searchInput" class="search-wrap">
+            <div>
+                <form role="search" class="searchform-wrap" method="GET" action="/blog/search">
+                    <div class="searchform">
+                        <input type="search" placeholder="Search..." value name="title" title="Search blog">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Nội dung trang -->
+        <div class="container container-padding">
+            <!--Container -->
+            <%- include ("./Container.ejs")%>
+            <!--Sidebar-->
+            <%- include ("./Sidebar.ejs") %>
+        </div>
+        <!--Pagination-->
+        <%- include ('./Pagination.ejs') %>
+        <!-- Footer -->
+        <%- include ('./Footer.ejs') %>
+    </div>
+    <script>
+        const searchBtnBlog = document.getElementById('searchBlog');
+        const searchInput = document.getElementById('searchInput');
+
+        searchBtnBlog.addEventListener('click', () => {
+            searchInput.style.opacity = "1";
+            searchInput.style.visibility = 'visible';
+            searchInput.style.pointerEvents = 'auto';
+        })
+    </script>
+</body>
+</html>
+

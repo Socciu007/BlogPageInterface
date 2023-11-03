@@ -1,0 +1,465 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+
+.container-padding {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.blog-feed {
+        width: 100%;
+        flex: 1;
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+        min-height: 500px;
+        transition: all .5s ease-in-out;
+    }
+
+.item {
+    grid-row-end: auto !important;
+    position: relative;
+    display: block;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.item.visible {
+    opacity: 1;
+}
+
+.img-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.img-cover {
+    background-image: url(https://demo.major-themes.com/norway8/wp-content/uploads/2019/11/two-smiling-women-3097303.jpg-optimized-1024x683.jpg);
+    width: 100%;
+    height: 300px;
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+    opacity: 1;
+}
+
+.post-wrapper {
+    text-align: center;
+}
+
+.post-tags a:first-child, .widget_tag_cloud a:first-child, .post-category a:first-child {
+    margin-left: 0;
+}
+
+.post-category {
+    margin-bottom: 15px;
+}
+
+.post-category a {
+    font-size: 14px !important;
+    color: #fff !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .25s ease-in-out;
+    display: inline-block;
+    font-size: 16px !important;
+    margin: 0 3px 5px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px 15px;
+    line-height: 1;
+}
+
+.post-title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+    word-wrap: break-word;
+}
+
+.grid-item article .post-title a:hover {
+    border-bottom: 2px solid #757575;
+}
+
+.post-meta {
+    margin-bottom: 15px;
+    opacity: 0.85;
+    line-height: 170%;
+    font-size: 14px;
+    color: #757575;
+}
+
+.post-detail {
+    word-wrap: break-word;
+}
+
+.post-wrapper > .post-meta-min {
+    opacity: .85;
+    color: #858585;
+    font-size: 14px;
+}
+
+.post-wrapper>.post-meta-min span {
+    margin-right: 15px;
+}
+
+.post-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.singular-featured {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 1920px;
+    margin-bottom: 30px;
+}
+
+.content {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content .post-title {
+    max-width: 700px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+h1.post-title {
+    line-height: 115%;
+    font-size: 42px;
+    font-weight: 400;
+    word-wrap: break-word;
+    font-family: 'Lato';
+}
+
+.content article {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content article .post-content {
+    word-wrap: break-word;
+}
+
+.content article .post-content p {
+    margin: 0 0 1.7em;
+    padding: 0;
+}
+
+.content article .post-content .wp-block-image {
+    margin-bottom: 2em;
+    position: relative;
+}
+
+article .post-content .alignfull {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 1920px;
+}
+
+.content article .post-content>figure {
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.content article .post-content img {
+    height: auto !important;
+}
+
+.wp-block-image.alignfull img, .wp-block-image.alignwide img {
+    height: auto;
+    width: 100%;
+}
+
+.wp-block-image.has-custom-border img, .wp-block-image img {
+    box-sizing: border-box;
+}
+
+.wp-block-image img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.content article .post-content .wp-block-image figcaption {
+    background: #fff;
+    color: #757575;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    line-height: 150%;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    padding: 5px 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: normal;
+}
+
+.content article .post-content figcaption {
+    font-size: 16px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 150%;
+    color: #5a595c;
+}
+.wp-block-image figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.content article .post-content .wp-block-pullquote {
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2em;
+    max-width: 900px;
+}
+
+.wp-block-pullquote {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+.wp-block-pullquote {
+    margin: 0 0 1em;
+    padding: 3em 0;
+    text-align: center;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.content article .post-content .wp-block-pullquote p:last-of-type {
+    margin-bottom: 0;
+}
+
+.content article .post-content .wp-block-pullquote cite {
+    margin-top: 1em;
+    display: block;
+    line-height: 1.8;
+}
+
+.content article .post-content .wp-block-pullquote p {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 24px !important;
+    line-height: 170%;
+}
+
+cite {
+    font-style: italic;
+}
+
+.wp-block-pullquote cite {
+    color: inherit;
+}
+
+.wp-block-pullquote cite, .wp-block-pullquote footer {
+    position: relative;
+}
+
+.content article .post-content .wp-block-quote {
+    border-top: 20px solid #fafaf9 !important;
+    margin: 0;
+    padding: 0;
+    border-left: 0 !important;
+    padding-top: 20px !important;
+    padding-left: 50px !important;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.content article .post-content .wp-block-quote:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    content: '\f10e';
+    line-height: 1;
+}
+
+.content article .post-content .wp-block-quote p:last-of-type {
+    margin-bottom: 0;
+}
+.content article .post-content .wp-block-quote p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.content article .post-content .wp-block-quote cite {
+    margin-top: 1em;
+    display: block;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 18px;
+}
+
+.content .post-footer {
+    clear: both;
+}
+
+.theme-body .post-share {
+    display: block;
+}
+
+.post-share {
+    display: none;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    width: 100%;
+    border-top: 1px solid #f1f1f1;
+}
+.post-share .share-buttons {
+    display: flex;
+}
+
+.post-share .share-buttons>div {
+    margin-right: 20px;
+}
+.post-share .share-buttons>div a {
+    transition: all .25s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post-share .share-buttons>div i {
+    font-size: 20px;
+}
+
+.theme-menu, .featured-categories .cat-name, .follow a, .post-share .share-buttons .callout {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.post-share .share-buttons .callout {
+    line-height: 20px;
+    margin-left: 10px;
+}
+
+section.bekento_thumbnail_recent_posts ul li {
+    counter-increment: number;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.widget li {
+    line-height: 160%;
+}
+
+footer section .widget-title:after, .widget-title:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 25px;
+    width: 50px;
+    height: 5px;
+    transform: translate(-50%,0);
+}
+
+.author-bio .person:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    max-width: 700px;
+    flex: 1;
+}
+
+.wp-block-quote {
+    overflow-wrap: break-word;
+}
+.wp-block-query-title, .wp-block-quote {
+    box-sizing: border-box;
+}
+
+.content article .author-bio {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.content article .author-bio .person {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+button.show-comments {
+    width: 100%;
+    background-color: #f0c05a;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff !important;
+    display: inline-block;
+    border: 0;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin: 0 0 5px;
+    text-decoration: none !important;
+    line-height: 1.8;
+    position: relative;
+    transition: all .25s ease-in-out;
+}
+
+.comments-wrap {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 1200px){
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .content {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 50px;
+    }
+    .post-header {
+        margin-bottom: 30px;
+    }
+}

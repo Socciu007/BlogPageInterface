@@ -1,0 +1,14 @@
+<div class="row align-items-start text-center px-5 mt-4">
+    <% for (blog of blogs) { %>
+        <div class="col ms-3 mb-5">
+            <div class="card" style="width: 18rem;">
+                <img width="100%" class="editorjs" height="240" src="<%=blog.urlImg%>" alt="<%=blog.category%>">
+                <div class="card-body">
+                  <h5 class="card-title"><%=blog.category%></h5>
+                  <p class="card-text fs-5"><a href="/blog/<%= blog.id%>/<%= seoUrl(blog.title) %>"><%=blog.title%></a></p>
+                  <p class="card-text"><a href="#" rel="bookmark"></a><%=blog.meta%></p>
+                </div>
+            </div>
+        </div>
+    <%}%>
+</div>

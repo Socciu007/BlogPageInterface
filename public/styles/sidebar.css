@@ -1,0 +1,322 @@
+aside {
+    display: block;
+}
+
+.sidebar_position-right aside.main-sidebar {
+    padding-left: 50px;
+}
+
+aside.main-sidebar {
+    transition: all .25s ease-in-out;
+    flex: 1;
+    max-width: 400px;
+    min-width: 400px;
+    padding-left: 50px;
+}
+
+.sidebar .widget {
+    max-width: 700px;
+}
+
+.widget {
+    word-wrap: break-word;
+    line-height: 160%;
+}
+
+section.widget {
+    font-size: 16px;
+    margin-bottom: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.widget .widget-title {
+    position: relative;
+}
+
+section>h2.widget-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 22px;
+}
+
+section.widget>h2 {
+    padding: 0;
+    margin-top: 0;
+    font-size: 20px;
+}
+.post-pages>span, .post-pages>span, .follow a:hover, .follow a:hover, nav.navigation .current, nav.navigation .current, .featured-categories a:hover .cat-name, .featured-categories a:hover .cat-name, .post-content button, .post-content button, .sidebar button, .sidebar button, .wp-block-button__link:not(.has-background), .wp-block-button__link:not(.has-background), a.button, a.button, button.button, button.button, .widget button, .widget button, .post-content button, .post-content button, input[type=submit], input[type=submit], .default-button, .default-button, #submit, #submit, .widget_tag_cloud .tagcloud a, .widget_tag_cloud .tagcloud a, .widget_calendar caption, .widget_calendar caption, .post-tags .tagcloud a, .post-tags .tagcloud a, .post-category a, .post-category a, article.sticky:before, article.sticky:before, .bekento_thumbnail_recent_posts .show_images li .post-thumbnail, .bekento_thumbnail_recent_posts .show_images li .post-thumbnail, .bekento-options button.button, .bekento-options button.button, .woocommerce-pagination .current, .woocommerce-pagination .current, #primary button, #primary button, .widget.grid-item-content .widget-title:after, .widget.grid-item-content .widget-title:after, .sidebar .widget-title:after, .sidebar .widget-title:after, .widget_price_filter .ui-state-default, .widget_price_filter .ui-state-default, #primary #review_form_wrapper .active, #primary #review_form_wrapper .active, .woocommerce-Addresses a, .woocommerce-Addresses a {
+    background-color: #f0c05a;
+}
+section.widget button {
+    color: #fff !important;
+    display: inline-block;
+    border: 0;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin: 0 0 5px;
+    width: auto;
+    text-decoration: none !important;
+    line-height: 1.8;
+    position: relative;
+    transition: all .25s ease-in-out;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#page-hide {
+    display: none;
+}
+#page-hide1 {
+    display: none;
+}
+
+
+.sidebar .widget-title:after {
+    background-color: #f0c05a;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 25px;
+    width: 50px;
+    height: 5px;
+    transform: translate(-50%,0);
+}
+
+.author-bio .profile-cover {
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 450px;
+    flex: 0 0 100%;
+    margin-bottom: -85px
+}
+
+.author-bio.has-bg .picture {
+    border: 5px solid #fff
+}
+
+.author-bio.has-bg .name {
+    display: none
+}
+
+.author-bio .social-wrap .social-name {
+    display: none !important
+}
+
+.author-bio .person .text p {
+    margin-top: 0;
+    margin-bottom: 15px
+}
+
+.author-bio .person .name {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 24px
+}
+
+.author-bio .person .name a {
+    transition: all .25s ease-in-out
+}
+
+.author-bio .person:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    max-width: 700px;
+    flex: 1
+}
+
+.author-bio .person:only-child .text {
+    margin-right: 0;
+    margin-left: 25px
+}
+
+section.bekento_profile_widget .author-bio .person:nth-child(even) .text, section.bekento_profile_widget .author-bio .person:nth-child(odd) .text, section.bekento_profile_widget .author-bio .person:only-child .text {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.author-bio .person .social-wrap a {
+    margin: 0 10px
+}
+
+.author-bio .person .social-wrap a:last-child {
+    margin-right: 0
+}
+
+.author-bio .person .social-wrap a:first-child {
+    margin-left: 0
+}
+
+section.bekento_profile_widget .author-bio .person {
+    display: block;
+    margin-bottom: 0;
+    flex: 1 1 100%;
+    text-align: center;
+}
+
+.author-bio .person:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    max-width: 700px;
+    flex: 1;
+}
+
+.picture {
+    background-image: url(https://secure.gravatar.com/avatar/628877b…?s=300&d=mm&r=g);
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.social-wrap {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.fa, .fas, .far, .fal, .fad, .fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+section.bekento_thumbnail_recent_posts ul {
+    counter-reset: number;
+}
+
+section.widget ul, section.widget li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.widget li {
+    line-height: 160%;
+}
+
+section.bekento_thumbnail_recent_posts ul.show_images li {
+    margin-bottom: 30px;
+}
+
+section.bekento_thumbnail_recent_posts ul li {
+    counter-increment: number;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+section.bekento_thumbnail_recent_posts ul li a {
+    cursor: default;
+    transition: all .25s ease-in-out;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+section.bekento_thumbnail_recent_posts ul.show_images .post-thumbnail {
+    background-size: cover;
+    background-position: center center;
+    min-width: 100px;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    position: relative;
+}
+
+.bekento_thumbnail_recent_posts .show_images li .post-thumbnail, .bekento_thumbnail_recent_posts .show_images li .post-thumbnail {
+    background-color: #f0c05a;
+}
+
+section.bekento_thumbnail_recent_posts ul li .post-thumbnail {
+    cursor: pointer;
+}
+
+section.bekento_thumbnail_recent_posts ul.show_images li:first-child .marker {
+    font-size: 20px;
+}
+
+section.bekento_thumbnail_recent_posts ul li:first-child .marker {
+    line-height: 42px;
+    font-size: 30px;
+    display: none;
+}
+
+section.bekento_thumbnail_recent_posts ul.show_images .marker {
+    transition: all .25s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #f5f5f5;
+    color: #f5f5f5;
+    line-height: 39px;
+}
+section.bekento_thumbnail_recent_posts ul li .marker {
+    font-size: 24px;
+    line-height: 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 42px;
+    text-align: center;
+    display: none;
+    text-align: left;
+}
+
+section.bekento_thumbnail_recent_posts ul li .post-titles {
+    padding-left: 30px;
+}
+
+section.bekento_thumbnail_recent_posts ul.show_images .post-thumbnail:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+section.bekento_thumbnail_recent_posts ul li .post-thumbnail:before {
+    transition: all .25s ease-in-out;
+    display: block;
+    content: "" counter(number) " ";
+    line-height: 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 42px;
+    line-height: 39px;
+    border: 2px solid #fafaf9;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+}
+
+
+@media (max-width: 823px) {
+    .author-bio .person:nth-child(even) .text {
+        margin-right: 25px;
+        margin-left: 25px
+    }
+    .sidebar_position-right aside.main-sidebar {
+        padding-left: 0;
+        margin-top: 45px;
+    }
+}

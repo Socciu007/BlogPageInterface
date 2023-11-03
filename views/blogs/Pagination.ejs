@@ -1,0 +1,20 @@
+<nav class="navigation pagination" aria-label="Posts">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+        <span aria-current="page" class="page-numbers current">1</span>
+        <a class="page-numbers" href="/admin?page=2" style="text-decoration: none;">2</a>
+        <a class="page-numbers" href="/admin?page=3" style="text-decoration: none;">3</a>
+        <a class="page-numbers" id="page-hide" href="/admin?page=4" style="text-decoration: none;">4</a>
+        <a class="page-numbers" id="page-hide1" href="/admin?page=5" style="text-decoration: none;">5</a>
+        <a class="next page-numbers" id="next" href="#" style="text-decoration: none;">Older posts -></a>
+    </div>
+</nav>
+<script>
+    const pageHide = document.getElementById('page-hide')
+    const pageHide1 = document.getElementById('page-hide1')
+    document.getElementById('next').addEventListener("click", function() {
+      pageHide.style.display = 'inline-block';
+      pageHide1.style.display = 'inline-block';
+    });
+
+</script>

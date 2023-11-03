@@ -1,0 +1,32 @@
+<div class="blog-feed">
+    <% for (blog of blogs) { %>
+    <div class="item visible" style="grid-row-end: span 13;">
+        <article>
+            <div class="img-wrapper">
+                <a href="/blog/blog-detail">
+                    <%#<div class="img-cover"></div>%>
+                    <div>
+                        <img width="700" height="467" src="<%=blog.urlImg%>" alt="<%=blog.category%>"/>
+                    </div>
+                </a>
+            </div>
+            <div class="post-wrapper">
+                <div class="post-category"><a href="/blog/blog-detail" style="background-color: #ad5e99;"><%=blog.category%></a></div>
+                <h2 class="post-title"><a href="/blog/blog-detail" rel="bookmark"><%=blog.title%></a></h2>
+                <div class="post-meta"><%=blog.meta%></div>
+                <div class="post-detail">
+                    <p><%=blog.detail%></p>
+                </div>
+                <div class="post-meta-min">
+                    <span class="minutes-read"><i class="fa-regular fa-clock" style="color: #858585;"></i> 3 min read</span>
+                    <span class="views"><i class="fa-solid fa-eye" style="color: #858585;"></i> 5,084 views</span>
+                    <span class="comments-count">
+                        <i class="fa-regular fa-comment" style="color: #858585;"></i>
+                        7 Comments
+                    </span>
+                </div>
+            </div>
+        </article>
+    </div>
+    <%}%>
+</div>

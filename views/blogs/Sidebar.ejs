@@ -1,0 +1,80 @@
+<aside class="main-sidebar sidebar">
+    <section class="widget bekento_profile_widget">
+        <div class="author-bio">
+            <div class="people">
+                <div class="person">
+                    <div>
+                        <a href="https://demo.major-themes.com/norway8/author/melisa">
+                            <div class="picture" style="background-image: url(pictures/avt1.jpeg)"></div>
+                        </a>
+                    </div>
+                    <div class="text">
+                        <h3 class="name">
+                            <a href="https://demo.major-themes.com/norway8/author/melisa">Melisa Sawyer</a>
+                        </h3>
+                        <p>Odio facilisis mauris sit amet massa. Ac tincidunt vitae semper quis lectus nulla at. Eros donec ac odio tempor.</p>
+                        <div class="social-wrap">
+                            <a href="#" title="Twitter" class="twitter" style="color: #1da1f2">
+                                <i class="fab fa-twitter-square"></i>
+                                <span class="social-name">twitter</span>
+                            </a>
+                            <a href="#" title="Instagram" class="instagram" style="color: #e1306c">
+                                <i class="fab fa-instagram"></i>
+                                <span class="social-name">instagram</span>
+                            </a>
+                            <a href="#" title="Youtube" class="youtube" style="color: #ff0000">
+                                <i class="fab fa-youtube"></i>
+                                <span class="social-name">youtube</span>
+                            </a>
+                            <a href="#" title="Spotify" class="spotify" style="color: #1ed760">
+                                <i class="fab fa-spotify"></i>
+                                <span class="social-name">spotify</span>
+                            </a>
+                            <a href="#" title="Twitch" class="Twitch" style="color: #4b367c">
+                                <i class="fab fa-twitch"></i>
+                                <span class="social-name">twitch</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="widget bekento_thumbnail_recent_posts">
+        <h2 class="widget-title">Recent Posts</h2>
+        <ul class="show_images">
+            <% for (post of posts) { %>
+            <li>
+                <a href="<%= post.urlPost %>">
+                    <div class="post-thumbnail" style="background-image: url(<%=post.urlImg %>)">
+                        <div class="marker"></div>
+                    </div>
+                    <div class="post-titles"><span>
+                        <%= post.title %>
+                    </span></div>
+                </a>
+            </li>
+            <%}%>
+        </ul>
+    </section>
+    <section class="widget widget_archive">
+        <h2 class="widget-title">Achives</h2>
+        <ul>
+            <li><a href="#">November 2019</a></li>
+            <li><a href="#">May 2019</a></li>
+            <li><a href="#">April 2019</a></li>
+            <li><a href="#">March 2019</a></li>
+            <li><a href="#">January 2019</a></li>
+        </ul>
+    </section>
+    <section class="widget_text widget widget_custom_html">
+        <h2 class="widget-title">Subscribe</h2>
+        <div class="textwidget custom-html-widget">
+            <div style="text-align: center;">
+                <p>You can subscribe majority of dark matter is thought to be non-baryonic in nature</p>
+                <p><input type="text" placeholder="Email..."></p>
+                <button>Subcribes</button>
+            </div>
+        </div>
+    </section>
+</aside>
