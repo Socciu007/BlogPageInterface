@@ -3,14 +3,18 @@ const router = express.Router();
 const controller = require("../controllers/AdminController");
 const middleware = require("../middlewares/AuthMiddleware");
 const multer = require("multer");
+
+// const storage = multer.memoryStorage();
+
 const upload = multer({
-  dest: "./public/uploads/",
+  dest: "./public/",
   limits: {
     fileSize: 25 * 1024 * 1024, // 25MB
   },
+  // storage: storage,
 });
 
-router.get("/", middleware.requireAuth, controller.index);
+router.get("/", controller.index);
 
 router.post("/", upload.single("image"), controller.createBlog);
 

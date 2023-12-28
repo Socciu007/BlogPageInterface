@@ -3,6 +3,7 @@ const Blog = require("../models/Blogs");
 const db = require("../db.json");
 const shortid = require("shortid");
 const md5 = require("md5");
+// const sharp = require("sharp");
 
 const toSeoUrl = (title) => {
   return title
@@ -35,61 +36,82 @@ module.exports.email = async (req, res) => {
 };
 
 module.exports.logIn = async (req, res) => {
-  const blogs = await Blog.find();
-  res.render("users/login", {
-    errors: null,
-    values: "",
-    blogs: blogs,
-    posts: db.posts,
-  });
+  try {
+    const blogs = await Blog.find();
+    res.render("users/login", {
+      errors: null,
+      values: "",
+      blogs: blogs,
+      posts: db.posts,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "ERR",
+      message: "Load signin page is not success.",
+    });
+  }
 };
 
 module.exports.postLogIn = async (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  try {
+    const username = req.body.username;
+    const password = req.body.password;
 
-  const users = await User.find({ username: username });
+    const users = await User.find({ username: username });
 
-  if (!username) {
-    res.render("users/login", {
-      errors: ["Username is required."],
-      values: req.body,
-    });
-    return;
-  }
-
-  if (users.length == 0) {
-    res.render("users/login", {
-      errors: ["User does not exist."],
-      values: req.body,
-    });
-    return;
-  }
-
-  //hashed password
-  const hashedPassword = md5(password);
-  for (user of users) {
-    if (user.password !== hashedPassword) {
+    if (!username) {
       res.render("users/login", {
-        errors: ["Wrong password."],
+        errors: ["Username is required."],
         values: req.body,
       });
       return;
-    } else {
-      res.cookie("UserId", user.id);
-      res.redirect("/admin");
     }
+
+    if (users.length == 0) {
+      res.render("users/login", {
+        errors: ["User does not exist."],
+        values: req.body,
+      });
+      return;
+    }
+
+    //hashed password
+    const hashedPassword = md5(password);
+    for (user of users) {
+      if (user.password !== hashedPassword) {
+        res.render("users/login", {
+          errors: ["Wrong password."],
+          values: req.body,
+        });
+        return;
+      } else {
+        res.cookie("UserId", user.id);
+        res.redirect("/admin");
+      }
+    }
+  } catch (error) {
+    res.status(400).json({
+      status: "ERR",
+      message: "Log in is not success.",
+    });
   }
 };
 
 module.exports.signUp = async (req, res) => {
-  const blogs = await Blog.find();
-  res.render("users/signup", {
-    errors: null,
-    values: "",
-    blogs: blogs,
-    posts: db.posts,
-  });
+  try {
+    const blogs = await Blog.find();
+    res.render("users/signup", {
+      errors: null,
+      values: "",
+      blogs: blogs,
+      posts: db.posts,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "ERR",
+      message: "Load signup pages is not success.",
+    });
+  }
 };
 
 module.exports.createUser = async (req, res) => {
@@ -131,6 +153,20 @@ module.exports.createUser = async (req, res) => {
 
 module.exports.createBlog = async (req, res) => {
   try {
+    if (!req.file) {
+      return res.status(400).json({
+        status: "ERR",
+        message: "The file image is require.",
+      });
+    }
+    // const imagePath = req.file.path;
+    // console.log(imagePath);
+    // // Sử dụng sharp để resize ảnh
+    // const resizedImage = await sharp(imagePath)
+    //   .resize(800, 600) // Kích thước mới
+    //   .toFile(`uploads/${req.file.filename}.jpg`);
+    // console.log(resizedImage);
+
     req.body.image = "../../" + req.file.path.split("\\").slice(1).join("/");
 
     const newBlog = new Blog({
@@ -138,29 +174,15 @@ module.exports.createBlog = async (req, res) => {
       urlImg: req.body.image,
       category: req.body.category,
       title: req.body.title,
-      meta: "by Melisa Sawyer on October 06, 2023",
       detail: req.body.details,
     });
     await Blog.create(newBlog);
 
     res.redirect("/admin");
   } catch (error) {
-    res.status(404).json({ message: "Add blog is not success!" });
+    res.status(400).json({
+      status: "ERR",
+      message: "Add blog is not success!",
+    });
   }
 };
-
-// try {
-//   const resizedImageBuffer = await sharp(req.file.buffer)
-//   .resize(Number(req.body.width), Number(req.body.height))
-//   .toBuffer()
-//   res.writeHead(200, {
-//     "Content-Type": "image/png",
-//     "Content-Disposition": 'attachment; filename ="resized_image.png'
-//   })
-//   res.end(resizedImageBuffer)
-//  } catch(error) {
-//   if (error instanceof multer.MulterError && error.code === "LIMIT_FILE_SIZE") {
-//     return res.status(400).send("Kích thước ảnh không được vượt quá 25MB");
-//   }
-//   next(error);
-//  }

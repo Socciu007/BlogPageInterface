@@ -5,7 +5,7 @@ const blogSchema = new mongoose.Schema({
   urlImg: String,
   category: String,
   title: String,
-  meta: String || "by Melisa Sawyer on October 06, 2023",
+  meta: { type: String, default: "by Melisa Sawyer on October 06, 2023" },
   detail: String,
 });
 

@@ -10,6 +10,9 @@ const port = 3000;
 
 //Connect MongoDB
 connectDB();
+app.get("/editor", (req, res) => {
+  res.render("blogs/Editor"); // Hiển thị trang EJS
+});
 
 //Config ejs
 app.set("view engine", "ejs");

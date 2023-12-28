@@ -1,14 +1,6 @@
 const db = require("../db.json");
 const Blog = require("../models/Blogs");
 
-const toSeoUrl = (title) => {
-  return title
-    .toLowerCase()
-    .replace(/[^\w\s]/gi, "") // Loại bỏ các ký tự đặc biệt
-    .replace(/\s+/g, "-") // Thay thế khoảng trắng bằng dấu gạch nối
-    .substring(0, 50); // Giới hạn độ dài URL (nếu cần)
-};
-
 module.exports.index = async (req, res) => {
   try {
     const blogs = await Blog.find();
@@ -17,7 +9,7 @@ module.exports.index = async (req, res) => {
       posts: db.posts,
     });
   } catch (e) {
-    res.status(500).json({ e: "Loi khi lay du lieu MongoDB" });
+    res.status(500).json({ message: "Loi khi lay du lieu MongoDB" });
   }
 };
 
@@ -37,13 +29,26 @@ module.exports.datailBlog = async (req, res) => {
 };
 
 module.exports.seoTitleBlog = async (req, res) => {
-  const id = req.params.id;
-  const blog = await Blog.findOne({
-    id: id,
-  });
-
-  res.render("blogs/blogdetail/index", {
-    blogs: blog,
-    seoUrl: toSeoUrl,
-  });
+  try {
+    const id = req.params.id;
+    const blog = await Blog.findOne({
+      id: id,
+    });
+    const toSeoUrl = (title) => {
+      return title
+        .toLowerCase()
+        .replace(/[^\w\s]/gi, "") // Loại bỏ các ký tự đặc biệt
+        .replace(/\s+/g, "-") // Thay thế khoảng trắng bằng dấu gạch nối
+        .substring(0, 50); // Giới hạn độ dài URL (nếu cần)
+    };
+    res.render("blogs/blogdetail/index", {
+      blogs: blog,
+      seoUrl: toSeoUrl,
+    });
+  } catch (error) {
+    res.status(404).json({
+      status: "ERR",
+      message: "Khong the Seo link.",
+    });
+  }
 };
